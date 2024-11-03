@@ -1,8 +1,13 @@
 import { JwtPayload, jwtDecode } from 'jwt-decode';
 
 class AuthService {
+  // Initiate automatic logout check on service instantiation
+  constructor() {
+    this.autoLogoutOnTokenExpiry(); 
+  }
+
   getProfile() {
-    // TODO: return the decoded token
+    // return the decoded token
     const token = this.getToken();
     if (token) {
       return jwtDecode<JwtPayload>(token)
@@ -10,13 +15,13 @@ class AuthService {
   }
 
   loggedIn() {
-    // TODO: return a value that indicates if the user is logged in
+    //  return a value that indicates if the user is logged in
     const token = this.getToken();
     return token;
   }
 
   isTokenExpired(token: string): boolean {
-    // TODO: return a value that indicates if the token is expired
+    //  return a value that indicates if the token is expired
     try {
       // intersection typing eg.(<JwtPayload & { exp?: number }>) makes it a string & a number type with the number being optional in this case.
       const decoded = jwtDecode<JwtPayload & { exp?: number }>(token)
@@ -30,23 +35,35 @@ class AuthService {
     }
   }
   getToken(): string | null {
-    // TODO: return the token
+    //  return the token
     return localStorage.getItem('token')
   }
 
   login(idToken: string) {
-    // TODO: set the token to localStorage
+    //  set the token to localStorage
     localStorage.setItem('token', idToken)
-    // TODO: redirect to the home page
+    //  redirect to the home page
     window.location.href = '/'
   }
 
   logout() {
-    // TODO: remove the token from localStorage
+    // remove the token from localStorage
     localStorage.removeItem('token')
-    // TODO: redirect to the login page
+    // redirect to the login page
     window.location.href = '/'
   }
+
+  autoLogoutOnTokenExpiry() {
+    const token = this.getToken();
+    if (!token) return;
+
+    setInterval(() => {
+      if (this.isTokenExpired(token)) {
+        this.logout();
+      }
+    }, 15000); // Check every minute (60000 ms)
+  }
+
 }
 
 export default new AuthService();

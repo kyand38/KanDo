@@ -22,7 +22,7 @@ export const login = async (req: Request, res: Response) => {
   // return a Jwt token...
   const secretKey = process.env.JWT_SECRET_KEY || '';
 
-  const token = jwt.sign({ username }, secretKey, { expiresIn: '1m' });
+  const token = jwt.sign({ username }, secretKey, { expiresIn: '5m' });
 
   return res.json({ token });
 };

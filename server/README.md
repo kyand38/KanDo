@@ -14,7 +14,7 @@
  -[Questions](#questions)<br/>
 
 ## Installation: 
- - Clone the repository: `git clone git@github.com:kyand38/KanDo.git`. 
+ - Clone the repository:`git clone git@github.com:kyand38/KanDo.git`. 
  - Run `npm install` to install dependencies. 
  - Set up your environment variables for JWT, database, and server configurations.
  - Build with `npm run build`. 
