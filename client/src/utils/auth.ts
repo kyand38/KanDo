@@ -50,7 +50,7 @@ class AuthService {
     // remove the token from localStorage
     localStorage.removeItem('token')
     // redirect to the login page
-    window.location.href = '/'
+    window.location.href = '/login'
   }
 
   autoLogoutOnTokenExpiry() {
