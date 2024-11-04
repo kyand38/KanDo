@@ -184,12 +184,19 @@ tbody tr:nth-child(odd) {
   height: 60vh;
 }
 
+.login-notice {
+  display: flex;
+  flex-direction: column;
+}
 #create-ticket-link {
   display: block;
   margin-left: auto;
 }
 
-.loginH1{
+.loginH1 {
+  background-color: #343a40;
+}
+.editTicketh1 {
   background-color: #343a40;
 }
 

@@ -23,6 +23,7 @@ const Login = () => {
       const data = await login(loginData);
       Auth.login(data.token);
     } catch (err) {
+      alert('Login failed')
       console.error('Failed to login', err);
     }
   };
