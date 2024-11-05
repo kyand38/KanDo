@@ -24,8 +24,12 @@
 ## Usage:
  - Open the application and navigate to the login page. 
  - Enter your username and password.
+ - Usernames and passwords for testing purposes.
+ -  < username: 'JollyGuru', password: 'password'>
+    < username: 'SunnyScribe', password: 'password'>
+    < username: 'RadiantComet', password: 'password'>
  - Upon successful authentication, you will be redirected to the main Kanban board page where you can manage tasks.
- - [Link to deployed example]()
+ - [Link to deployed example](https://kando-486m.onrender.com/) 
 
 ## License:
 This application is covered under the following license: [MIT License](https://www.gnu.org/licenses/gpl-3.0)
