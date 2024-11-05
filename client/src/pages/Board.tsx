@@ -1,6 +1,6 @@
 import { useEffect, useState, useLayoutEffect } from 'react';
 import { Link } from 'react-router-dom';
-import Login from './Login';
+// import Login from './Login';
 import { retrieveTickets, deleteTicket } from '../api/ticketAPI';
 import ErrorPage from './ErrorPage';
 import Swimlane from '../components/Swimlane';
@@ -61,7 +61,7 @@ const Board = () => {
     {
       !loginCheck ? (
         <div className='login-notice'>
-          <Login/>
+          {/* <Login/> */}
           <h1>
             Login to create & view tickets
           </h1>

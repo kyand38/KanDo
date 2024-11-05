@@ -50,7 +50,7 @@ const EditTicket = () => {
         {
           ticket ? (
             <form className='form' onSubmit={handleSubmit}>
-              <h1>Edit Ticket</h1>
+              <h1 className='editH1'>Edit Ticket</h1>
               <label htmlFor='tName'>Ticket Name</label>
               <textarea
                 id='tName'

@@ -1,6 +1,7 @@
 import { JwtPayload, jwtDecode } from 'jwt-decode';
 
 class AuthService {
+  
   // Initiate automatic logout check on service instantiation
   constructor() {
     this.autoLogoutOnTokenExpiry(); 
@@ -38,19 +39,20 @@ class AuthService {
     //  return the token
     return localStorage.getItem('token')
   }
-
+  
   login(idToken: string) {
     //  set the token to localStorage
     localStorage.setItem('token', idToken)
     //  redirect to the home page
-    window.location.href = '/'
+    window.location.href = ('/')
   }
-
-  logout() {
+  
+  logout() { 
     // remove the token from localStorage
     localStorage.removeItem('token')
     // redirect to the login page
-    window.location.href = '/'
+
+    window.location.href = ('/login')
   }
 
   autoLogoutOnTokenExpiry() {
